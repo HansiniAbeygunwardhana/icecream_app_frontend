@@ -1,0 +1,45 @@
+@import "../../../styles/mixins/color.scss";
+@import "../../../styles/mixins/font.scss";
+
+.IceCreamCard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 26.389vw;
+    height: 40.972vw;
+    border-radius: 1.736vw;
+    margin: 200px 100px;
+    font-family: $poppins;
+    color: $brown;
+    align-items: center;
+  
+    img {
+      width: 13vw;
+      // position: absolute;
+      top: 20px;
+      // object-fit: cover;
+    }
+  .IceCreamCard_info{
+    gap: 2.083vw;
+
+    .IceCreamCard_info_title{
+      text-align: center;
+      font-size: 1.667vw;
+      font-weight: 700;
+    }
+    .IceCreamCard_info_descript{
+      font-size: 1.111vw;
+      text-align: center;
+      font-weight: 400;
+    }
+
+  }
+  
+  
+      
+}
+  

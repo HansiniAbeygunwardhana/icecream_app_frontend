@@ -1,0 +1,37 @@
+@import "../../styles/mixins/font.scss";
+@import "../../styles/mixins/color.scss";
+
+.navbar{
+    color: $brown;
+    font-family: $comic;
+    font-size: 1.389vw;
+    font-weight: 400;
+    align-items: center;
+    background-color: $bggrey; 
+    padding: 0.556vw 4.167vw;
+
+    .navbar_logo{
+        width: 10%;
+        max-width: 13.750vw;
+        max-height: 100px;
+    }
+    
+    .navbar_section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4.167vw;
+        background-color: $white;
+        border-radius: 1.736vw;        
+        padding: 0.556vw 4.167vw;
+
+        .navbar_icons{
+            gap: 1.736vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+}
