@@ -3,11 +3,13 @@ import "./IceCreamCard.scss";
 import product_mock from "../../../assets/png/product_mock.png";
 import PrimaryBtn from "../../buttons/primary_button/primary_button";
 import cart from "../../../assets/icons/cart.png";
+import star from "../../../assets/icons/star.png";
 
 const IceCreamCard = () => {
   return (
     <div className="IceCreamCard">
       <img
+        className="ProductImg"
         src={product_mock}
         alt="Ben & Jerry's Vanilla Caramel Fudge Ice Cream"
       />
@@ -17,7 +19,13 @@ const IceCreamCard = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt
         </div>
-        <div className="IceCreamCard_info_rating">4</div>
+        <div className="IceCreamCard_info_rating">
+          <img src={star} alt="rate.png" />
+          <img src={star} alt="rate.png" />
+          <img src={star} alt="rate.png" />
+          <img src={star} alt="rate.png" />
+          <img src={star} alt="rate.png" />
+        </div>
         <div className="IceCreamCard_info_subinfo">
           <div className="IceCreamCard_info_quantity">
             <div>-</div>

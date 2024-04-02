@@ -10,13 +10,15 @@ export const HeroSection = ({ title, hero_main, circle_img, hero_content }) => {
       <div className="hero_main_section">
         <div className="hero_content_wrapper">
           <img src={hero_main} alt="ice_cream_png" className="hero_img" />
-          <div className="hero_circle">
-            <div className="sub_circle">
-              <img
-                src={circle_img}
-                alt="ben n jerry ice.png"
-                className="circle_img"
-              />
+          <div className=".overflow_container">
+            <div className="hero_circle">
+              <div className="sub_circle">
+                <img
+                  src={circle_img}
+                  alt="ben n jerry ice.png"
+                  className="circle_img"
+                />
+              </div>
             </div>
           </div>
         </div>

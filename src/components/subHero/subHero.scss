@@ -1,0 +1,24 @@
+@import "../../styles/mixins/color.scss";
+@import "../../styles/mixins/font.scss";
+
+.second_section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.389vw;
+    font-family: $poppins;
+    color: $brown;
+    padding-left: 8.333vw;
+    padding-top: 2.5vw;
+  
+    .second_section_title{
+      font-size: 2.222vw;
+      font-weight: 700;
+    }
+    .second_section_content{
+      font-size: 1.389vw;
+      font-weight: 400;
+    }
+  
+  
+  }
