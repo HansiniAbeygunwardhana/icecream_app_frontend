@@ -1,12 +1,12 @@
 import "./App.scss";
-import HomePage from "./pages/homepage/homepage";
-import IceCreamCard from "./components/card/productCard/IceCreamCard";
+import HomePage from "./Pages/HomePage/HomePage";
+import BestSelling from "./components/BestSelling/BestSelling";
 
 function App() {
   return (
     <div className="App">
       {/* <HomePage /> */}
-      <IceCreamCard />
+      <BestSelling />
     </div>
   );
 }

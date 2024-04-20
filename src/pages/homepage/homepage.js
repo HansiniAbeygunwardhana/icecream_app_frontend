@@ -1,15 +1,14 @@
 import React from "react";
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import search from "../../assets/icons/search.png";
 import heart from "../../assets/icons/heart.png";
 import user from "../../assets/icons/user.png";
-import "../../pages/homepage/homepage.scss";
+import "./HomePage.scss";
 import hero_ice from "../../assets/png/hero_ice.png";
-import arrow_white from "../../assets/icons/arrow_white.png";
-import PrimaryBtn from "../../components/buttons/primary_button/primary_button";
 import circle_img from "../../assets/png/circle_img.png";
-import HeroSection from "../../components/hero/hero";
-import SubHero from "../../components/subHero/subHero";
+import Hero from "../../components/Hero/Hero";
+import SubHero from "../../components/SubHero/SubHero";
+import IceCreamCard from "../../components/Card/ProductCard/IceCreamCard";
 
 export const HomePage = () => {
   return (
@@ -23,7 +22,7 @@ export const HomePage = () => {
         icon2={heart}
         icon3={user}
       />
-      <HeroSection
+      <Hero
         title={"Unleash Your Inner Flavor Freak!"}
         hero_main={hero_ice}
         circle_img={circle_img}
@@ -32,7 +31,7 @@ export const HomePage = () => {
         }
       />
       <SubHero />
-      <div>fsfacdkssssssssssssssssssssss</div>
+      <IceCreamCard />
     </div>
   );
 };

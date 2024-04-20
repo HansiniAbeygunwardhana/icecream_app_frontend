@@ -1,9 +1,9 @@
 import React from "react";
-import PrimaryBtn from "../../components/buttons/primary_button/primary_button";
-import arrow_white from "../../assets/icons/arrow_white.png";
-import "./hero.scss";
+import PrimaryBtn from "../Button/PrimaryButton/PrimaryBtn";
+import "./Hero.scss";
+import { ArrowRight } from "lucide-react";
 
-export const HeroSection = ({ title, hero_main, circle_img, hero_content }) => {
+export const Hero = ({ title, hero_main, circle_img, hero_content }) => {
   return (
     <div className="homepage_hero_space">
       <div className="homepage_hero_title">{title}</div>
@@ -27,7 +27,7 @@ export const HeroSection = ({ title, hero_main, circle_img, hero_content }) => {
           <div className="hero_btn">
             <PrimaryBtn
               btnContent={"explore more flavours"}
-              btnIcon={arrow_white}
+              btnIcon={<ArrowRight size={32} strokeWidth={1.75} />}
             />
           </div>
         </div>
@@ -36,4 +36,4 @@ export const HeroSection = ({ title, hero_main, circle_img, hero_content }) => {
   );
 };
 
-export default HeroSection;
+export default Hero;

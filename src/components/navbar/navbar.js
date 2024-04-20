@@ -1,5 +1,5 @@
 import React from "react";
-import "./navbar.scss";
+import "./Navbar.scss";
 import logo from "../../assets/logos/logo.png";
 
 export const Navbar = ({ text1, text2, text3, text4, icon1, icon2, icon3 }) => {

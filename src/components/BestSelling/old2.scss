@@ -1,0 +1,39 @@
+.carousel-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    flex: 0 0 30%; /* Adjust item width as needed */
+    margin-right: 10px;
+    opacity: 0;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

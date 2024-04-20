@@ -1,7 +1,7 @@
 import React from "react";
-import PrimaryBtn from "../buttons/primary_button/primary_button";
-import arrow_white from "../../assets/icons/arrow_white.png";
-import "./subHero.scss";
+import PrimaryBtn from "../Button/PrimaryButton/PrimaryBtn";
+import "./SubHero.scss";
+import { ArrowRight } from "lucide-react";
 
 export const SubHero = () => {
   return (
@@ -19,7 +19,7 @@ export const SubHero = () => {
       <div className="second_section_btn">
         <PrimaryBtn
           btnContent={"explore more flavours"}
-          btnIcon={arrow_white}
+          btnIcon={<ArrowRight size={32} strokeWidth={1.75} />}
         />
       </div>
     </div>

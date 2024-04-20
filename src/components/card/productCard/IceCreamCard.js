@@ -1,41 +1,55 @@
 import React from "react";
 import "./IceCreamCard.scss";
-import product_mock from "../../../assets/png/product_mock.png";
-import PrimaryBtn from "../../buttons/primary_button/primary_button";
-import cart from "../../../assets/icons/cart.png";
-import star from "../../../assets/icons/star.png";
+import { Star } from "lucide-react";
+import { Minus } from "lucide-react";
+import { Plus } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
+import PrimaryBtn from "../../Button/PrimaryButton/PrimaryBtn";
+import ProductMock from "../../../assets/png/product_mock.png";
 
-const IceCreamCard = () => {
+const IceCreamCard = ({ name }) => {
   return (
-    <div className="IceCreamCard">
-      <img
-        className="ProductImg"
-        src={product_mock}
-        alt="Ben & Jerry's Vanilla Caramel Fudge Ice Cream"
-      />
-      <div className="IceCreamCard_info">
-        <div className="IceCreamCard_info_title">Vanilla Caramel Fudge</div>
-        <div className="IceCreamCard_info_descript">
+    <div className="Icecreamcard">
+      <div className="Icecreamcard__image">
+        <img src={ProductMock} className="Icecreamcard__image_img" />
+      </div>
+      <div className="Icecreamcard__content">
+        <div className="Icecreamcard__content__title">{name}</div>
+        <div className="Icecreamcard__content__details">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt
         </div>
-        <div className="IceCreamCard_info_rating">
-          <img src={star} alt="rate.png" />
-          <img src={star} alt="rate.png" />
-          <img src={star} alt="rate.png" />
-          <img src={star} alt="rate.png" />
-          <img src={star} alt="rate.png" />
-        </div>
-        <div className="IceCreamCard_info_subinfo">
-          <div className="IceCreamCard_info_quantity">
-            <div>-</div>
-            <div>1</div>
-            <div>+</div>
+        <div className="Icecreamcard__content__ratings">
+          <div>
+            <Star fill="#3F1808" strokeWidth={0} />
           </div>
-          <div className="IceCreamCard_info_price">$ 265.25</div>
+          <div>
+            <Star fill="#3F1808" strokeWidth={0} />
+          </div>
+          <div>
+            <Star fill="#3F1808" strokeWidth={0} />
+          </div>
+          <div>
+            <Star fill="#3F1808" strokeWidth={0} />
+          </div>
+          <div>
+            <Star fill="#3F1808" strokeWidth={0} />
+          </div>
         </div>
-        <div className="IceCreamCard_info_btn">
-          <PrimaryBtn btnContent={"add to cart"} btnIcon={cart} />
+        <div className="Icecreamcard__content__container">
+          <div className="Icecreamcard__content__quantity">
+            <div>
+              <Minus size={15} />
+            </div>
+            <div>1</div>
+            <div>
+              <Plus size={15} />
+            </div>
+          </div>
+          <div className="Icecreamcard__content__price">$ 265.25</div>
+        </div>
+        <div className="Icecreamcard__content__btn">
+          <PrimaryBtn btnContent={"add to cart"} btnIcon={<ShoppingCart />} />
         </div>
       </div>
     </div>
