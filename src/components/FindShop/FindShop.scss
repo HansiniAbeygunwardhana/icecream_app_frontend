@@ -1,0 +1,35 @@
+@import "../../Styles/Mixins/Color.scss";
+@import "../../Styles/Mixins/Font.scss";
+
+.findshop{
+    position: relative;
+    height: 38.194vw;
+    background-color: $pink;
+    font-family: $poppins;
+    color: white;
+
+    .findshop__imgwrapper{
+        position: absolute;
+        top: -17vw;
+        padding-left: 55vw;
+        padding-top: 8vw;
+    }
+    .findshop__contentwrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        padding-left: 8.333vw;
+        gap: 1vw;
+        
+        .findshop__content__title{
+            font-weight: bold;
+            font-family: $comic;
+            font-size: 4.028vw;
+        }
+        .findshop__content__descript{
+            width: 39.236vw;
+            font-size: 1.389vw;
+        }
+    }
+}

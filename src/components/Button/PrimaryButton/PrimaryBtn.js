@@ -1,9 +1,12 @@
 import React from "react";
 import "../PrimaryButton/PrimaryBtn.scss";
 
-export const PrimaryBtn = ({ btnContent, btnIcon }) => {
+export const PrimaryBtn = ({ btnContent, btnIcon, bgcolor, color }) => {
   return (
-    <div className="primaryBtn">
+    <div
+      className="primaryBtn"
+      style={{ backgroundColor: bgcolor, color: color }}
+    >
       <div className="btnContent">{btnContent}</div>
       <div className="btnIcon">{btnIcon}</div>
     </div>

@@ -8,7 +8,10 @@ import hero_ice from "../../assets/png/hero_ice.png";
 import circle_img from "../../assets/png/circle_img.png";
 import Hero from "../../components/Hero/Hero";
 import SubHero from "../../components/SubHero/SubHero";
-import IceCreamCard from "../../components/Card/ProductCard/IceCreamCard";
+import BestSelling from "../../components/BestSelling/BestSelling";
+import FindShop from "../../components/FindShop/FindShop";
+import BestFlavour from "../../components/BestFlavour/BestFlavour";
+// import IceCreamCard from "../../components/Card/ProductCard/IceCreamCard";
 
 export const HomePage = () => {
   return (
@@ -31,7 +34,9 @@ export const HomePage = () => {
         }
       />
       <SubHero />
-      <IceCreamCard />
+      <BestSelling />
+      <FindShop />
+      <BestFlavour />
     </div>
   );
 };

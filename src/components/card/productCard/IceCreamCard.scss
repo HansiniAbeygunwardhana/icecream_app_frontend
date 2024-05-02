@@ -12,7 +12,7 @@
   background-color: $bggrey;
   align-items: center;
   border-radius: 1.736vw;
-  box-shadow: 0 0.764vw 1.042vw 0.069vw rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 0.764vw 1.042vw 0.069vw rgba(0, 0, 0, 0.5);
 
   .Icecreamcard__image {
     position: absolute;
@@ -36,11 +36,15 @@
     text-align: center;
 
     .Icecreamcard__content__title {
-      font-size: 1.667vw;
+      font-size: 130%;
       font-weight: bold;
+      // flex-grow: 1; /* Allow title to grow within its container */
+      overflow: hidden; /* Hide overflowed text */
+      text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+      line-height: 1.2;
     }
     .Icecreamcard__content__details{
-      font-size: 1.111vw;
+      font-size: 100%;
     }
 
     .Icecreamcard__content__ratings {

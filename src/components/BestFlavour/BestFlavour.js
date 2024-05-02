@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IceCreamCard from "../Card/ProductCard/IceCreamCard";
-import "./BestSelling.scss"; // Import CSS for styling
+import "./BestFlavour.scss"; // Import CSS for styling
 import RightBtn from "../Button/CarouselBtn/RightBtn";
 import LeftBtn from "../Button/CarouselBtn/LeftBtn";
 
-const BestSelling = () => {
+const BestFlavour = () => {
   const bestSellingProducts = [
     { id: 1, name: "Vanilla Caramel Fudge" },
     { id: 2, name: "Chocolate Chip Cookie" },
@@ -102,4 +102,4 @@ const BestSelling = () => {
   );
 };
 
-export default BestSelling;
+export default BestFlavour;

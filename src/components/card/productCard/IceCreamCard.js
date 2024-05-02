@@ -7,9 +7,12 @@ import { ShoppingCart } from "lucide-react";
 import PrimaryBtn from "../../Button/PrimaryButton/PrimaryBtn";
 import ProductMock from "../../../assets/png/product_mock.png";
 
-const IceCreamCard = ({ name }) => {
+const IceCreamCard = ({ name, bgcolor, boxshadow }) => {
   return (
-    <div className="Icecreamcard">
+    <div
+      className="Icecreamcard"
+      style={{ backgroundColor: bgcolor, boxShadow: boxshadow }}
+    >
       <div className="Icecreamcard__image">
         <img src={ProductMock} className="Icecreamcard__image_img" />
       </div>
