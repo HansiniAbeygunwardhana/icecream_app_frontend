@@ -7,16 +7,56 @@ import LeftBtn from "../Button/CarouselBtn/LeftBtn";
 
 const BestSelling = () => {
   const bestSellingProducts = [
-    { id: 1, name: "Vanilla Caramel Fudge" },
-    { id: 2, name: "Chocolate Chip Cookie" },
-    { id: 3, name: "Strawberry Cheesecake" },
-    { id: 4, name: "Mint Chocolate Chip" },
-    { id: 5, name: "Cookies and Cream" },
-    { id: 6, name: "Pistachio Almond" },
-    { id: 7, name: "Rocky Road" },
-    { id: 8, name: "Salted Caramel Swirl" },
-    { id: 9, name: "Butter Pecan" },
-    { id: 10, name: "Coffee Toffee Crunch" },
+    {
+      id: 1,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/chocolatey%20love%20affair.png",
+      name: "Vanilla Caramel Fudge",
+    },
+    {
+      id: 2,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/chunky%20monkey.png",
+      name: "Chocolate Chip Cookie",
+    },
+    {
+      id: 3,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/coffee%20coffee.png",
+      name: "Strawberry Cheesecake",
+    },
+    {
+      id: 4,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/phish%20food.png",
+      name: "Mint Chocolate Chip",
+    },
+    {
+      id: 5,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/pistachio.png",
+      name: "Cookies and Cream",
+    },
+    {
+      id: 6,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/coffee%20coffee.png",
+      name: "Pistachio Almond",
+    },
+    {
+      id: 7,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/chocolatey%20love%20affair.png",
+      name: "Rocky Road",
+    },
+    {
+      id: 8,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/coffee%20coffee.png",
+      name: "Salted Caramel Swirl",
+    },
+    {
+      id: 9,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/phish%20food.png",
+      name: "Butter Pecan",
+    },
+    {
+      id: 10,
+      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/pistachio.png",
+      name: "Coffee Toffee Crunch",
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,6 +119,7 @@ const BestSelling = () => {
                   {index >= currentSlide &&
                     index < currentSlide + numVisibleSlides && (
                       <IceCreamCard
+                        img={product.img}
                         name={product.name}
                         bgcolor={bgcolor}
                         boxshadow={boxshadow}
