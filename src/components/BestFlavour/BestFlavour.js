@@ -1,38 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IceCreamCard from "../Card/ProductCard/IceCreamCard";
 import "./BestFlavour.scss"; // Import CSS for styling
 import RightBtn from "../Button/CarouselBtn/RightBtn";
 import LeftBtn from "../Button/CarouselBtn/LeftBtn";
+import getIceCreamList from "../../Services/IceCreamServices";
 
 const BestFlavour = () => {
-  const bestSellingProducts = [
-    { id: 1, name: "Vanilla Caramel Fudge" },
-    { id: 2, name: "Chocolate Chip Cookie" },
-    { id: 3, name: "Strawberry Cheesecake" },
-    { id: 4, name: "Mint Chocolate Chip" },
-    { id: 5, name: "Cookies and Cream" },
-    { id: 6, name: "Pistachio Almond" },
-    { id: 7, name: "Rocky Road" },
-    { id: 8, name: "Salted Caramel Swirl" },
-    { id: 9, name: "Butter Pecan" },
-    { id: 10, name: "Coffee Toffee Crunch" },
-  ];
-
+  const [bestFlavourProduct, setBestFlavourProduct] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const numVisibleSlides = 3; // Number of slides to display at once
+  const numVisibleSlides = 3;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getIceCreamList();
+        setBestFlavourProduct(data);
+      } catch (error) {
+        console.error("Failed to fetch ice cream data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide > 0
         ? prevSlide - 1
-        : bestSellingProducts.length - numVisibleSlides
+        : bestFlavourProduct.length - numVisibleSlides
     );
   };
 
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide < bestSellingProducts.length - numVisibleSlides
+      prevSlide < bestFlavourProduct.length - numVisibleSlides
         ? prevSlide + 1
         : 0
     );
@@ -47,7 +49,7 @@ const BestFlavour = () => {
             className="carousel-container"
             key={currentSlide} // Ensure horizontal layout
           >
-            {bestSellingProducts.map((product, index) => {
+            {bestFlavourProduct.map((product, index) => {
               const isMiddleCard = index === currentSlide + 1;
               const cardWidth = isMiddleCard ? 380 : 307;
               const bgcolor = isMiddleCard ? "#F4F0ED" : "#FFFFFF";
@@ -57,7 +59,7 @@ const BestFlavour = () => {
 
               return (
                 <motion.div
-                  key={product.id}
+                  key={product.iceCreamId}
                   className={`carousel-item ${
                     index >= currentSlide &&
                     index < currentSlide + numVisibleSlides
@@ -79,7 +81,11 @@ const BestFlavour = () => {
                   {index >= currentSlide &&
                     index < currentSlide + numVisibleSlides && (
                       <IceCreamCard
-                        name={product.name}
+                        img={product.imgUrl}
+                        name={product.iceCreamName}
+                        detail={product.iceCreamDescription}
+                        rating={product.rating}
+                        price={product.price}
                         bgcolor={bgcolor}
                         boxshadow={boxshadow}
                       />

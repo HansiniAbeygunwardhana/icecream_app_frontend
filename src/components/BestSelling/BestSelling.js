@@ -1,66 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import IceCreamCard from "../Card/ProductCard/IceCreamCard";
 import "./BestSelling.scss"; // Import CSS for styling
 import RightBtn from "../Button/CarouselBtn/RightBtn";
 import LeftBtn from "../Button/CarouselBtn/LeftBtn";
+import getIceCreamList from "../../Services/IceCreamServices";
 
 const BestSelling = () => {
-  const bestSellingProducts = [
-    {
-      id: 1,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/chocolatey%20love%20affair.png",
-      name: "Vanilla Caramel Fudge",
-    },
-    {
-      id: 2,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/chunky%20monkey.png",
-      name: "Chocolate Chip Cookie",
-    },
-    {
-      id: 3,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/coffee%20coffee.png",
-      name: "Strawberry Cheesecake",
-    },
-    {
-      id: 4,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/phish%20food.png",
-      name: "Mint Chocolate Chip",
-    },
-    {
-      id: 5,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/pistachio.png",
-      name: "Cookies and Cream",
-    },
-    {
-      id: 6,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/coffee%20coffee.png",
-      name: "Pistachio Almond",
-    },
-    {
-      id: 7,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/chocolatey%20love%20affair.png",
-      name: "Rocky Road",
-    },
-    {
-      id: 8,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/coffee%20coffee.png",
-      name: "Salted Caramel Swirl",
-    },
-    {
-      id: 9,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/phish%20food.png",
-      name: "Butter Pecan",
-    },
-    {
-      id: 10,
-      img: "https://storage.googleapis.com/ice-cream-ben-n-jerry-bucket/pistachio.png",
-      name: "Coffee Toffee Crunch",
-    },
-  ];
-
+  const [bestSellingProducts, setBestSellingProducts] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const numVisibleSlides = 3; // Number of slides to display at once
+  const numVisibleSlides = 3;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getIceCreamList();
+        setBestSellingProducts(data);
+      } catch (error) {
+        console.error("Failed to fetch ice cream data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) =>
@@ -97,7 +59,7 @@ const BestSelling = () => {
 
               return (
                 <motion.div
-                  key={product.id}
+                  key={product.iceCreamId}
                   className={`carousel-item ${
                     index >= currentSlide &&
                     index < currentSlide + numVisibleSlides
@@ -119,8 +81,11 @@ const BestSelling = () => {
                   {index >= currentSlide &&
                     index < currentSlide + numVisibleSlides && (
                       <IceCreamCard
-                        img={product.img}
-                        name={product.name}
+                        img={product.imgUrl}
+                        name={product.iceCreamName}
+                        detail={product.iceCreamDescription}
+                        rating={product.rating}
+                        price={product.price}
                         bgcolor={bgcolor}
                         boxshadow={boxshadow}
                       />

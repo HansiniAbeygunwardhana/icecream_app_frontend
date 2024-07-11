@@ -7,7 +7,25 @@ import { ShoppingCart } from "lucide-react";
 import PrimaryBtn from "../../Button/PrimaryButton/PrimaryBtn";
 import ProductMock from "../../../assets/png/product_mock.png";
 
-const IceCreamCard = ({ img, name, bgcolor, boxshadow }) => {
+const IceCreamCard = ({
+  img,
+  name,
+  bgcolor,
+  boxshadow,
+  detail,
+  rating,
+  price,
+}) => {
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <Star key={i} fill={i < rating ? "#3F1808" : "none"} strokeWidth={0} />
+      );
+    }
+    return stars;
+  };
+
   return (
     <div
       className="Icecreamcard"
@@ -18,27 +36,8 @@ const IceCreamCard = ({ img, name, bgcolor, boxshadow }) => {
       </div>
       <div className="Icecreamcard__content">
         <div className="Icecreamcard__content__title">{name}</div>
-        <div className="Icecreamcard__content__details">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt
-        </div>
-        <div className="Icecreamcard__content__ratings">
-          <div>
-            <Star fill="#3F1808" strokeWidth={0} />
-          </div>
-          <div>
-            <Star fill="#3F1808" strokeWidth={0} />
-          </div>
-          <div>
-            <Star fill="#3F1808" strokeWidth={0} />
-          </div>
-          <div>
-            <Star fill="#3F1808" strokeWidth={0} />
-          </div>
-          <div>
-            <Star fill="#3F1808" strokeWidth={0} />
-          </div>
-        </div>
+        <div className="Icecreamcard__content__details">{detail}</div>
+        <div className="Icecreamcard__content__ratings">{renderStars()}</div>
         <div className="Icecreamcard__content__container">
           <div className="Icecreamcard__content__quantity">
             <div>
@@ -49,7 +48,7 @@ const IceCreamCard = ({ img, name, bgcolor, boxshadow }) => {
               <Plus size={15} />
             </div>
           </div>
-          <div className="Icecreamcard__content__price">$ 265.25</div>
+          <div className="Icecreamcard__content__price">RS {price}</div>
         </div>
         <div className="Icecreamcard__content__btn">
           <PrimaryBtn btnContent={"add to cart"} btnIcon={<ShoppingCart />} />
