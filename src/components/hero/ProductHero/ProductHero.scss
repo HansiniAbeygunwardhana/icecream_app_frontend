@@ -1,0 +1,20 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    height: 400vh;
+  }
+  
+  .parent {
+    height: 100px;
+    width: 100px;
+    background-color: mediumslateblue;
+    position: fixed;
+  }
+  
+  .child {
+    height: 100px;
+    width: 100px;
+    background-color: mediumslateblue;
+    border-top-left-radius: 40px;
+  }
+  

@@ -4,6 +4,7 @@ import search from "../../assets/icons/search.png";
 import heart from "../../assets/icons/heart.png";
 import user from "../../assets/icons/user.png";
 import "./HomePage.scss";
+import { useNavigate } from "react-router-dom";
 import hero_ice from "../../assets/png/hero_ice.png";
 import circle_img from "../../assets/png/circle_img.png";
 import Hero from "../../components/Hero/Hero";
@@ -14,8 +15,9 @@ import BestFlavour from "../../components/BestFlavour/BestFlavour";
 // import IceCreamCard from "../../components/Card/ProductCard/IceCreamCard";
 
 export const HomePage = () => {
+  const navigate = useNavigate();
   return (
-    <div>
+    <div onClick={() => navigate("/product")}>
       <Navbar
         text1={"Our Flavours"}
         text2={"Where to Buy"}
